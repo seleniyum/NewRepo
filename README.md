@@ -42,3 +42,70 @@ public class Array {
 	}
 
 }
+------------------------------------------------Two Dimensional Array----------------------------------
+package mypackage;
+
+public class TwoDimensionalArray {
+
+	public static void main(String[] args) {
+		
+	int a[][] = new int [3][3];
+	
+	//First Row
+	a[0][0]= 0;
+	a[0][1]= 3;
+	a[0][2]= 0;
+	a[1][0]= 3;
+	a[1][1]= 0;
+	a[1][2]= 3;
+	a[2][0]= 0;
+	a[2][1]= 3;
+	a[2][2]= 3;
+	
+	int rowNum;
+	int colNum;
+	for (rowNum =0;rowNum<=2;rowNum++)
+	{
+		System.out.println("Row number is :" + rowNum);
+	
+	for(colNum = 0; colNum<=2; colNum++)
+	{
+		System.out.println(a[rowNum][colNum]);
+	}
+	}
+	}
+}
+
+-----------------------------------Radio Button Example -----------------------------------------
+
+package myPackage;
+
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class RadioButton {
+
+	public static void main(String[] args) {
+		
+		WebDriver driver = new FirefoxDriver();
+		driver.get("http://www.echoecho.com/htmlforms10.htm");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		List<WebElement> list =
+		driver.findElements(By.xpath("//input[@name='group1']"));
+		System.out.println(list.size());
+		for(WebElement e:list){
+		
+	System.out.println(e.getAttribute("value"));
+	System.out.println(e.isSelected());
+	
+		}
+	}
+
+}
